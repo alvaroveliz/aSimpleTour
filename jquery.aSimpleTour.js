@@ -17,6 +17,7 @@
     data : [],
     autoStart : false,
     controlsPosition : 'TR',
+    welcomeMessage : '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
     controlsColors : {
       background: 'rgba(8, 68, 142, 0.80)',
       color: '#fff'
@@ -52,7 +53,7 @@
         options = $.extend(settings, opts);
         
         controls = '<div id="tourControls">\
-          <div id="tourText"><h2>Tour</h2><p>Welcome to the Tour Plugin</p></div>\
+          <div id="tourText">'+options.welcomeMessage+'</div>\
           <div id="tourButtons">\
             <button id="tourPrev" style="display:none">Previous</button>\
             <button id="tourNext">Start</button>\
