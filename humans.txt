@@ -1,7 +1,0 @@
-/* Perkins LESS Framework, by Carlos Elias and Rodrigo Fuentealba */
-/* Homepage:    p.erkins.com */
-/* About this:  humanstxt.org */
-
-Standards: HTML5, CSS3
-Components: LessJS
-Software: TextMate, Github, Node
