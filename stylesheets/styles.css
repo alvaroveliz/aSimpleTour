@@ -1,0 +1,800 @@
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:400,700');
+html, body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  line-height: 1;
+  font-family: inherit;
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ol, ul {
+  list-style: none;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+/**
+ *  Perkins LESS Framework Version 2.0
+ *  ==================================
+ *
+ *  Color palette generators
+ *
+ *  Designed by                   
+ *                                Rodrigo Fuentealba
+ *
+ */
+/**
+ *  Grayscale generation
+ */
+/**
+ *  Palette generator calculations
+ */
+/**
+ *  Color palette generation
+ */
+/**
+ *  Color default for styling 
+ */
+/**
+   *  CSS3 text columns mixin
+   */
+/*
+  * Helpers
+  */
+.btn, input[type="submit"], button {
+  display: inline-block;
+  padding: 0.7em 1em;
+  color: #444444;
+  line-height: 1;
+  border: 1px solid rgba(45, 45, 45, 0.5);
+  margin: 3px 0;
+  background: #cccccc;
+  /* Legacy browsers */
+
+  background: #b3b3b3 none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#b3b3b3));
+  background: none, -webkit-linear-gradient(#cccccc, #b3b3b3);
+  background: none, -moz-linear-gradient(#cccccc, #b3b3b3);
+  background: none, -o-linear-gradient(top, #cccccc, #b3b3b3);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#cccccc), to(#b3b3b3));
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  font-weight: 300;
+}
+.btn:hover, input[type="submit"]:hover, button:hover {
+  background: #b3b3b3;
+  /* Legacy browsers */
+
+  background: #cccccc none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#b3b3b3), to(#cccccc));
+  background: none, -webkit-linear-gradient(#b3b3b3, #cccccc);
+  background: none, -moz-linear-gradient(#b3b3b3, #cccccc);
+  background: none, -o-linear-gradient(top, #b3b3b3, #cccccc);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#b3b3b3), to(#cccccc));
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  color: #444444;
+  text-decoration: none;
+}
+.sbtn {
+  font-size: 11px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px 5px 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+h1 a.btn, h2 a.btn, h3 a.btn {
+  padding: 25px 30px 20px !important;
+}
+/*
+    TODO Pills Menu
+  */
+.h-menu {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.h-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.h-menu li a {
+  display: block;
+  padding: 5px 10px;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+}
+.v-menu {
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+.v-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+.v-menu li a {
+  display: block;
+  padding: 10px 5px 5px;
+  margin: 0 0 -1px 0;
+  text-decoration: none;
+}
+.t-menu {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.t-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.t-menu li a {
+  display: block;
+  padding: 10px 20px 4px;
+  margin: 0 -1px 0 0;
+  text-decoration: none;
+}
+/**
+ *  Perkins LESS Framework Version 2.0
+ *  ==================================
+ *
+ *  Structural and typography basic config, helpers and mixins
+ *
+ *  Designed by                   Carlos Elías
+ *                                Rodrigo Fuentealba
+ *
+ */
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-family: "Ubuntu";
+  color: #3c3c3c;
+  text-rendering: optimizeLegibility;
+}
+header,
+nav,
+footer,
+aside,
+article,
+section {
+  display: block;
+}
+a {
+  border: none;
+  color: #0000d6;
+}
+a img {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+a:visited {
+  cursor: pointer;
+  outline: none;
+}
+a:hover {
+  cursor: pointer;
+  outline: none;
+  color: #000070;
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+a:active {
+  cursor: pointer;
+  outline: none;
+}
+blockquote {
+  border-left: 0.3em #cccccc solid;
+  line-height: 1.5;
+  margin: 1.5em 0.5 2em 1.5em;
+  padding: 0.5em 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+mark {
+  background-color: #FFFCE1;
+  padding: 0 5px;
+}
+p {
+  margin-bottom: 1em;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+pre {
+  line-height: 1.2;
+  margin: 0;
+  padding: 1.5em;
+  font-weight: 300;
+  background: #333;
+  color: #00d600;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 3em #000000, 0 0 0 transparent;
+  -moz-box-shadow: inset 0 1px 3em #000000, 0 0 0 transparent;
+  -ms-box-shadow: inset 0 1px 3em #000000, 0 0 0 transparent;
+  -o-box-shadow: inset 0 1px 3em #000000, 0 0 0 transparent;
+  box-shadow: inset 0 1px 3em #000000, 0 0 0 transparent;
+}
+hr {
+  background: #cccccc;
+  color: #cccccc;
+  border: none;
+  clear: both;
+  float: none;
+  height: 1px;
+  margin: 0 0 1.45em;
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.2em 0;
+  font-family: "Ubuntu";
+  font-weight: bold;
+}
+h1 {
+  font-size: 3.0rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2.1rem;
+}
+h5 {
+  font-size: 1.8rem;
+}
+h6 {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+li, label {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+li ol li, li ul li {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+  text-transform: none;
+}
+abbr {
+  border-bottom: 1px dotted #cccccc;
+  font-style: italic;
+  text-transform: uppercase;
+}
+acronym {
+  border-bottom: 1px dotted #cccccc;
+  font-style: italic;
+  text-transform: uppercase;
+}
+address {
+  font-style: italic;
+}
+bdo {
+  font-weight: normal;
+  margin-bottom: 1.0em;
+}
+blockquote {
+  font-family: serif;
+  font-style: italic;
+}
+cite {
+  font-family: "Ubuntu";
+  font-style: italic;
+}
+code {
+  font-family: mono-space, monospace;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+dl {
+  font-weight: bold;
+}
+dl dt {
+  font-weight: 500;
+}
+dl dd {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+em {
+  font-style: italic;
+  font-weight: normal;
+}
+ins {
+  text-decoration: underline;
+}
+kbd {
+  font-family: mono-space, monospace;
+  font-style: italic;
+}
+mark {
+  font-family: "Ubuntu";
+}
+meter {
+  font-weight: normal;
+}
+p {
+  font-weight: normal;
+}
+pre {
+  font-family: mono-space, monospace;
+  font-weight: bold;
+}
+q {
+  font-family: serif;
+  font-weight: normal;
+}
+samp {
+  font-family: mono-space, monospace;
+  font-weight: normal;
+}
+small {
+  font-size: 75%;
+}
+strong {
+  font-weight: bold;
+}
+var {
+  font-style: italic;
+}
+.clear, br {
+  zoom: 1;
+}
+.clear:after, br {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.full {
+  width: 100%;
+}
+.tal {
+  text-align: left;
+}
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+.taj {
+  text-align: justify;
+}
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  margin: 0 1.5em 1.5em 0;
+}
+ul ul {
+  list-style-type: square;
+}
+ul ul ul {
+  list-style-type: circle;
+}
+ul li {
+  margin: 0 0 0.5em 0.85em;
+}
+ul li ul {
+  margin: 0 1.5em 0 0;
+}
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+  margin: 1.0em 0.5em 0.5em 0.5em;
+}
+ol li {
+  margin: 0em 0.5em 0.5em 0.5em;
+}
+ol li ul {
+  margin: 0 1.5em 0 0;
+}
+dl {
+  margin: 0 0 1.5em 0;
+}
+dl dt {
+  margin: 0px 0px 0px 10px;
+  padding-bottom: 5px;
+}
+dl dd {
+  margin: 0px 0px 0px 20px;
+  padding-bottom: 5px;
+}
+fieldset {
+  border: 1px solid #cccccc;
+  margin: 0 0 18px 0;
+  padding: 10px;
+}
+fieldset legend {
+  color: #666666;
+  padding: 0 10px;
+}
+input, select, textarea {
+  border: 1px solid #cccccc;
+  display: block;
+  padding: 4px;
+}
+select {
+  padding: 3px;
+}
+input:focus, select:focus, textarea:focus {
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  -webkit-box-shadow: 0 0 5px #0000d6, 0 2px 5px rgba(32, 32, 32, 0.2) inset;
+  -moz-box-shadow: 0 0 5px #0000d6, 0 2px 5px rgba(32, 32, 32, 0.2) inset;
+  -ms-box-shadow: 0 0 5px #0000d6, 0 2px 5px rgba(32, 32, 32, 0.2) inset;
+  -o-box-shadow: 0 0 5px #0000d6, 0 2px 5px rgba(32, 32, 32, 0.2) inset;
+  box-shadow: 0 0 5px #0000d6, 0 2px 5px rgba(32, 32, 32, 0.2) inset;
+  border: 1px solid #666666;
+}
+input[type="checkbox"] {
+  margin: 3px 4px 0 2px;
+}
+input[type="radio"] {
+  margin: 3px 4px 0 0;
+}
+label {
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  display: block;
+  cursor: pointer;
+}
+label input {
+  display: inline-block;
+}
+input, textarea, select {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+body {
+  width: 80%;
+  margin: 0 auto;
+  background: url('../images/tcloth.png');
+}
+p {
+  font-size: 1.4rem;
+}
+#menu {
+  clear: both;
+  /* Legacy browsers */
+
+  background: #222222 none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#6f6f6f), to(#222222));
+  background: none, -webkit-linear-gradient(#6f6f6f, #222222);
+  background: none, -moz-linear-gradient(#6f6f6f, #222222);
+  background: none, -o-linear-gradient(top, #6f6f6f, #222222);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#6f6f6f), to(#222222));
+  width: 100%;
+  margin-bottom: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
+  -moz-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
+  -ms-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
+  -o-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
+}
+#menu li a {
+  padding: 10px 20px;
+  color: #eeeeee;
+  border-right: 1px solid #444;
+}
+#menu li:last-child a {
+  border-right: 0px solid #444;
+}
+footer {
+  background: #d5d5d5;
+  padding: 20px;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+}
+button {
+  font-size: 12px;
+}
+button, .btn, input.sbtn[type="submit"] {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: normal;
+  /* Legacy browsers */
+
+  background: #1563ca none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#229fe0), to(#1563ca));
+  background: none, -webkit-linear-gradient(#229fe0, #1563ca);
+  background: none, -moz-linear-gradient(#229fe0, #1563ca);
+  background: none, -o-linear-gradient(top, #229fe0, #1563ca);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#229fe0), to(#1563ca));
+  text-shadow: none;
+  color: #eeeeee;
+  font-family: "Ubuntu";
+  letter-spacing: 0.02em;
+}
+button:hover, .btn:hover, input.sbtn[type="submit"]:hover {
+  color: #eeeeee;
+  /* Legacy browsers */
+
+  background: #23a6ed none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#1367d6), to(#23a6ed));
+  background: none, -webkit-linear-gradient(#1367d6, #23a6ed);
+  background: none, -moz-linear-gradient(#1367d6, #23a6ed);
+  background: none, -o-linear-gradient(top, #1367d6, #23a6ed);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#1367d6), to(#23a6ed));
+}
+.btn-selected {
+  /* Legacy browsers */
+
+  background: #23a6ed none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#1367d6), to(#23a6ed));
+  background: none, -webkit-linear-gradient(#1367d6, #23a6ed);
+  background: none, -moz-linear-gradient(#1367d6, #23a6ed);
+  background: none, -o-linear-gradient(top, #1367d6, #23a6ed);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#1367d6), to(#23a6ed));
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+  color: #303030;
+}
+.bdelete {
+  /* Legacy browsers */
+
+  background: #ff0000 none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#ff3333), to(#ff0000));
+  background: none, -webkit-linear-gradient(#ff3333, #ff0000);
+  background: none, -moz-linear-gradient(#ff3333, #ff0000);
+  background: none, -o-linear-gradient(top, #ff3333, #ff0000);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#ff3333), to(#ff0000));
+}
+.bdelete:hover {
+  /* Legacy browsers */
+
+  background: #ff3333 none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#ff3333));
+  background: none, -webkit-linear-gradient(#ff0000, #ff3333);
+  background: none, -moz-linear-gradient(#ff0000, #ff3333);
+  background: none, -o-linear-gradient(top, #ff0000, #ff3333);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#ff0000), to(#ff3333));
+}
+.bcancel, .bback {
+  background: #cccccc;
+  color: #666666 !important;
+}
+.bcancel:hover, .bback:hover {
+  /* Legacy browsers */
+
+  background: #cccccc none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#b3b3b3), to(#cccccc));
+  background: none, -webkit-linear-gradient(#b3b3b3, #cccccc);
+  background: none, -moz-linear-gradient(#b3b3b3, #cccccc);
+  background: none, -o-linear-gradient(top, #b3b3b3, #cccccc);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#b3b3b3), to(#cccccc));
+}
+.bactive, .blessimportant {
+  /* Legacy browsers */
+
+  background: #303030 none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#666666), to(#303030));
+  background: none, -webkit-linear-gradient(#666666, #303030);
+  background: none, -moz-linear-gradient(#666666, #303030);
+  background: none, -o-linear-gradient(top, #666666, #303030);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#666666), to(#303030));
+  color: #eeeeee !important;
+}
+.bactive:hover, .blessimportant:hover {
+  /* Legacy browsers */
+
+  background: #666666 none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#303030), to(#666666));
+  background: none, -webkit-linear-gradient(#303030, #666666);
+  background: none, -moz-linear-gradient(#303030, #666666);
+  background: none, -o-linear-gradient(top, #303030, #666666);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#303030), to(#666666));
+}
+.bdisable {
+  background: #cccccc;
+  color: #999999 !important;
+  cursor: not-allowed !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  -ms-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  -o-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+}
+.bdisable:hover {
+  background: #cccccc;
+  color: #999999 !important;
+  -webkit-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  -ms-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  -o-box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent;
+}
