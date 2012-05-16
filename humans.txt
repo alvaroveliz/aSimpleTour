@@ -1,5 +1,5 @@
-/* Perkins LESS Framework, by Carlos Elias and Rodrigo Fuentealba */
-/* Homepage:    p.erkins.com */
+/* aSimpleTour by Alvaro Véliz */
+/* Homepage:    avaroveliz.cl */
 /* About this:  humanstxt.org */
 
 Standards: HTML5, CSS3
