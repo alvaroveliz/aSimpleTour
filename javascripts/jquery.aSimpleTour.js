@@ -17,7 +17,7 @@
     data : [],
     autoStart : false,
     controlsPosition : 'TR',
-    welcomeMessage : '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
+    welcomeMessage: '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
     controlsColors : {
       background: 'rgba(8, 68, 142, 0.80)',
       color: '#fff'
