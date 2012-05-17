@@ -60,7 +60,7 @@
 
     <section id="content">
       <h2 class="tac">
-        <a href="http://github.com/alvaroveliz/asimpletour">aSimpleTourPlugin</a> is a jQuery plugin that will help you
+        <a href="http://github.com/alvaroveliz/aSimpleTour">aSimpleTourPlugin</a> is a jQuery plugin that will help you
         to make website tours. 
         <br />
         If you want to know how it works press the button "start tour"
@@ -120,8 +120,18 @@ $.aSimpleTour(options);
           <dd><code>The starting message tour</code></dd>
         </dl>
         <dl>
-          <dt><strong>tooltipColors</strong> and <strong>controlsColors</strong></dt>
-          <dd><code>This attribute can be use to change colors and backgrounds like :<br /> { 'color' : 'white', 'backgroud' : 'rgba(0, 0, 0, 0.85) '}</code></dd>
+          <dt>buttons</dt>
+          <dd>
+            <code>
+              With this attribute you can change the control buttons text using: 
+              <br />
+              buttons : { next : 'Next &amp;rarr;', prev : '&amp;larr; Prev', start : 'Start!', end: 'The end' }
+            </code>
+          </dd>
+        </dl>
+        <dl>
+          <dt>tooltipColors & controlsColors</dt>
+          <dd><code>This attribute can be used to change colors and backgrounds like :<br /> { 'color' : 'white', 'backgroud' : 'rgba(0, 0, 0, 0.85)'}</code></dd>
         </dl>
         <dl>
           <dt>controlsPosition</dt>
