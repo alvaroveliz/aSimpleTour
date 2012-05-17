@@ -17,7 +17,13 @@
     data : [],
     autoStart : false,
     controlsPosition : 'TR',
-    welcomeMessage: '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
+    welcomeMessage : '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
+    buttons : {
+      next : 'Next',
+      prev : 'Previous',
+      start : 'Start',
+      end : 'End'
+    },
     controlsColors : {
       background: 'rgba(8, 68, 142, 0.80)',
       color: '#fff'
@@ -55,9 +61,9 @@
         controls = '<div id="tourControls">\
           <div id="tourText">'+options.welcomeMessage+'</div>\
           <div id="tourButtons">\
-            <button id="tourPrev" style="display:none">Previous</button>\
-            <button id="tourNext">Start</button>\
-            <button id="tourEnd" style="display:none">End tour</button>\
+            <button id="tourPrev" style="display:none">'+options.buttons.prev+'</button>\
+            <button id="tourNext">'+options.buttons.start+'</button>\
+            <button id="tourEnd" style="display:none">'+options.buttons.end+'</button>\
           </div>\
         </div>';
         $controlsCss = { 'display' : 'block', 'position': 'fixed', 'width' : '200px', 'padding' : '10px 20px', 'border-radius' : '10px', 'font-family' : 'sans-serif' };
@@ -96,13 +102,13 @@
       $tooltip.hide();
 
       if (step < steps) {
-        $('#tourNext').show().html('Next');
+        $('#tourNext').show().html(options.buttons.next);
       }
 
       if (step <= 0) {
         $('#tourPrev').hide();
         $('#tourEnd').hide();
-        $('#tourNext').html('Start');
+        $('#tourNext').html(options.buttons.start);
         step--;
       }
       else {
