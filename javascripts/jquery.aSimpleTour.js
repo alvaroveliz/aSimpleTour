@@ -8,7 +8,7 @@
  * Dependencies :
  * - jQuery scrollTo
  * 
- * This idea is based on appTour
+ * This idea is based on http://tympanus.net/codrops/2010/12/21/website-tour/ by Manoela Lic (https://twitter.com/#!/crnacura)
  */
 
 (function( $ ) {
