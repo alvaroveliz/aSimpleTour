@@ -1,4 +1,4 @@
-/**
+  /**
  * jQuery aSimpleTour
  *
  * @description Tour web
@@ -30,13 +30,14 @@
     },
     tooltipColors : {
       background: 'rgba(0, 0, 0, 0.70)',
-      color: '#fff'
+      color: '#fff',
     }
   };
 
   var options, step, steps;
   var ew, eh, el, et;
   var started = false;
+  var direction = 'f';
 
   var $tooltip    = $('<div>',{
                       id         : 'tourtip',
@@ -63,7 +64,7 @@
           <div id="tourButtons">\
             <button id="tourPrev" style="display:none">'+options.buttons.prev+'</button>\
             <button id="tourNext">'+options.buttons.start+'</button>\
-            <button id="tourEnd" style="display:none">'+options.buttons.end+'</button>\
+            <a href="javascript:void(0);" id="tourEnd" style="display:none; color: #fff; text-decoration: underline; font-size: 12px; float: right">'+options.buttons.end+'</a>\
           </div>\
         </div>';
         $controlsCss = { 'display' : 'block', 'position': 'fixed', 'width' : '200px', 'padding' : '10px 20px', 'border-radius' : '10px', 'font-family' : 'sans-serif' };
@@ -80,6 +81,7 @@
       }
     },
     next : function() {
+      direction = 'f';
       step++;
 
       if (step == steps) {
@@ -92,13 +94,15 @@
         if (step <= steps) {
           $('#tourPrev').show();
           $('#tourEnd').show();
-          $('#tourNext').show().html('Next');
+          $('#tourNext').show().html(options.buttons.next);
         }
 
         methods.setTooltip(stepData);
       }
     },
     prev : function() {
+      direction = 'b';
+
       $tooltip.hide();
 
       if (step < steps) {
@@ -121,33 +125,53 @@
     setTooltip : function(stepData) {
       $element = $(stepData.element);
 
-      if (typeof stepData.callback != 'undefined') {
-        if (stepData.callback == 'click') {
-          if ($element.attr('href') != '') {
-            location.href = $element.attr('href');
-          }
-          else {
-            $element.click();  
-          }
-        }
+      if (stepData.controlsPosition) {
+        methods.setControlsPosition(stepData.controlsPosition);
       }
-      else {
-        if (stepData.controlsPosition) {
-          methods.setControlsPosition(stepData.controlsPosition);
-        }
 
+      if (stepData.tooltip) {
         $tooltip.html(stepData.tooltip);
-        if (stepData.text) {
-          $('#tourText').html(stepData.text);
-        }
+        text = (typeof stepData.text != 'undefined') ? stepData.text : stepData.tooltip;
+        $('#tourText').html(text);
+        
         tooltipPos = (typeof stepData.position == 'undefined') ? 'BL' : stepData.position;
         $pos = methods.getTooltipPosition(tooltipPos, $element);
         
         $tooltip.css({ 'top': $pos.top+'px', 'left': $pos.left+'px' });
-        $tooltip.show('fast');
+        $tooltip.show('fast');  
 
-        $.scrollTo($tooltip, 200, { offset : -100});
-      }  
+        $.scrollTo($tooltip, 400, { offset : -100});
+      }
+
+
+      if (typeof stepData.callback != 'undefined') {
+        if (stepData.callback == 'click') {
+          urlRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+          urlslugRegex = /^[a-z0-9-]+$/;
+
+          if (urlRegex.test($element.attr('href')) || urlslugRegex.test($element.attr('href')) ) {
+            location.href = $element.attr('href');
+          }
+          else {
+            $element.trigger('click');  
+          }
+        }
+        else {
+          if (typeof eval(stepData.callback) == 'function') {
+            eval(stepData.callback);
+          }
+        }
+      }
+
+      if (stepData.next === true) {
+        if (direction == 'f') {
+          methods.next();  
+        }
+        else {
+          methods.prev();
+        }
+      }
+
     },
     setControlsPosition : function(pos) {
       chtml = $controls.html();
