@@ -3,6 +3,6 @@
     "version": "1.0.0",
     "main": "./jquery.aSimpleTour.js",
     "dependencies" : {
-        "jquery" : "1.9"
+        "jquery" : "1.8.*"
     }
 }
