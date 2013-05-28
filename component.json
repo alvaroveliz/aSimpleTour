@@ -1,0 +1,8 @@
+{
+    "name": "aSimpleTour",
+    "version": "1.0.0",
+    "main": "./jquery.aSimpleTour.js",
+    "dependencies" : {
+        "jquery" : "1.9"
+    }
+}
