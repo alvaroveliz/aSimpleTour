@@ -326,7 +326,6 @@ $(document).on('click',"#tourEnd",function() {
       $.error( 'Method ' +  method + ' does not exist on jQuery.aSimpleTour' );
     }   
   };
-
 })(jQuery);
 
 // Direct Access
