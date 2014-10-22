@@ -302,17 +302,17 @@
     }
   };
 
-  $('#tourNext').live('click', function() {
-    methods.next();
+$(document).on('click',"#tourNext",function() {
+ methods.next();
   });
 
-  $('#tourPrev').live('click', function() {
+$(document).on('click',"#tourPrev",function() {
     methods.prev();
   });
 
-  $('#tourEnd').live('click', function() {
+$(document).on('click',"#tourEnd",function() {
     methods.destroy();
-  })
+  });
 
   $.fn.aSimpleTour = function( method )
   {
@@ -326,7 +326,6 @@
       $.error( 'Method ' +  method + ' does not exist on jQuery.aSimpleTour' );
     }   
   };
-
 })(jQuery);
 
 // Direct Access
