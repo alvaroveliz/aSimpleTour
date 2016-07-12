@@ -1,0 +1,103 @@
+    <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>aSimpleTour - Demo 1 Next8</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">aSimpleTour <small>Demo 1</small></h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Next page</h2>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet esse vero nihil nulla iusto incidunt veritatis ullam, quo rerum? Porro pariatur natus at magnam obcaecati esse, iste dolore non a.</span>
+                    <span>Magnam ipsam, vel assumenda labore molestiae, quos maiores a laboriosam laborum ad itaque magni, quisquam dignissimos optio sit nesciunt veniam officiis sapiente soluta natus. At, repellendus, consequatur. Unde, reiciendis, aliquam!</span>
+                    <span>Illo ad qui soluta quidem cumque, impedit repellat architecto recusandae minima velit deleniti? Eum doloremque, repudiandae atque, ipsam velit corporis, nisi minus minima quae alias illum maxime vel rerum quod.</span></p>
+                    <p>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="test-modal">
+                          Launch modal
+                        </button>
+                    </p>
+                    <p class="text-center">
+                        <a href="index.html">&larr; Back to home</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+        <script src="../../javascripts/jquery.aSimpleTour.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
+
+        <script>
+            var tour = {
+                autoStart: false,
+                data : [
+                    { element : 'h2:eq(0)', tooltip : 'The next page', text: 'This is how we continue our tour', position: 'T' },
+                    { element : '#test-modal', tooltip : 'Open this modal', text: 'This is a test modal', position: 'L', callback: function(){ $('#test-modal').trigger('click') } },
+                ],
+                welcomeMessage: 'Welcome to the Demo #1',
+                controlsPosition : 'TR',
+                buttons: {
+                    next  : { text : 'Next', class : 'btn btn-default'},
+                    prev  : { text : 'Previous', class: 'btn btn-default' },
+                    start : { text : 'Start', class: 'btn btn-primary' },
+                    end   : { text : 'End', class: 'btn btn-primary' }
+                },
+                controlsCss: {
+                    background: 'rgba(124, 124, 124, 0.9)',
+                    color: '#fff',
+                    width: '400px',
+                    'border-radius': 0
+                }
+            };
+
+            $(document).ready(function(){
+                $('.tour').on('click', function(){
+                    $.aSimpleTour(tour);
+                });
+            });
+        </script>
+    </body>
+</html>

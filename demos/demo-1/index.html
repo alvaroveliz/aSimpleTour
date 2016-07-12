@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>aSimpleTour - Demo 1</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">aSimpleTour <small>Demo 1</small></h1>
+                    <div class="text-center"><a href="javascript:void(0);" class="btn btn-primary tour">Start Example</a></div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default" id="panel-1">
+                        <div class="panel-heading">
+                            <div class="panel-title">Panel 1</div>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati error consequatur voluptatum voluptatibus hic reiciendis a sed illo molestias explicabo modi numquam eligendi nam nesciunt, earum voluptatem, provident, fuga architecto!
+                            </p>
+                            <a href="next.html">Next &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default" id="panel-2">
+                        <div class="panel-heading">
+                            <div class="panel-title">Panel 2</div>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum est obcaecati amet laboriosam omnis cupiditate. Nostrum unde perferendis earum in quasi minus, voluptatem possimus animi nam, distinctio, pariatur labore laudantium!
+                            </p>
+                            <a href="next.html">Next &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default" id="panel-3">
+                        <div class="panel-heading">
+                            <div class="panel-title">Panel 3</div>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, eveniet. Cumque eaque earum cupiditate facere. Vero neque similique dolorem aliquam, repudiandae tempora ipsum, iusto magni, odit nemo facere quas commodi.
+                            </p>
+                            <a href="next.html" id="next-3">Next &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script src="../../javascripts/jquery.aSimpleTour.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
+
+        <script>
+            var tour = {
+                autoStart: false,
+                data : [
+                    { element : '#panel-1', tooltip : 'This is the first panel', text: 'With an standard lorem ipsum', position: 'T' },
+                    { element : '#panel-2', tooltip : 'This is the second panel', text: 'Same as panel 1', position: 'T' },
+                    { element : '#panel-3', tooltip : 'This is the last panel', text: 'Now, we are getting close to the next button', position: 'T' },
+                    { element : '#next-3', tooltip : 'And…what if we click here?', text: 'We are leaving this page into a new page', position: 'R', location: 'next.html#tour=2' }
+                ],
+                welcomeMessage: 'Welcome to the Demo #1',
+                controlsPosition : 'TR',
+                buttons: {
+                    next  : { text : 'Next &rarr;', class : 'btn btn-default'},
+                    prev  : { text : '&larr; Previous', class: 'btn btn-default' },
+                    start : { text : 'Start', class: 'btn btn-primary' },
+                    end   : { text : 'End', class: 'btn btn-primary' }
+                },
+                controlsCss: {
+                    background: 'rgba(124, 124, 124, 0.9)',
+                    color: '#fff',
+                    width: '400px',
+                    'border-radius': 0
+                }
+            };
+
+            $(document).ready(function(){
+                $('.tour').on('click', function(){
+                    $.aSimpleTour(tour);
+                });
+            });
+        </script>
+    </body>
+</html>
