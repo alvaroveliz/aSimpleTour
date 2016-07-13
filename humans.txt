@@ -4,4 +4,4 @@
 
 Standards: HTML5, CSS3
 Components: LessJS
-Software: TextMate, Github, Node
+Software: Sublime, Github, Node

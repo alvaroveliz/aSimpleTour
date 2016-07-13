@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300);
+body {
+    background: #F9F9F9;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+}
+
+footer {
+    margin-top: 40px;
+    background: #F9F9F9;
+    padding: 50px 0;
+    color: #444;
+}
+
+// custom
+.navbar-default {
+    background: #373B41;
+    .dropdown {
+        &.open {
+            .dropdown-toggle {
+                background: lighten(#373B41, 10%) !important;
+            }
+            .dropdown-menu {
+                background: lighten(#373B41, 10%) !important;
+                li {
+                    a {
+                        &:hover {
+                           background: lighten(#373B41, 10%) !important; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-nav {
+    li {
+        a {
+            color: #FFF !important;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

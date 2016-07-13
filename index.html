@@ -1,120 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aSimpleTour: Alvaro's Simple Tour Plugin for jQuery v1.0</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="javascripts/jquery.aSimpleTour.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        options = {
-            data: [{
-                element: '#content h2',
-                'tooltip': 'Yes! It is very easy (simple) to use',
-                'position': 'T'
-            }, {
-                element: '#how h3',
-                'tooltip': 'Star reading this first',
-                'position': 'BL',
-                'text': '<h1>jSON structure</h1><code>Like : { some : var, lorem: ipsum } </code>'
-            }, {
-                element: '#how pre',
-                'tooltip': 'This can be used inside the body or head',
-                'position': 'T'
-            }, {
-                element: '#how pre',
-                'tooltip': 'Or can be used into a click event',
-                'position': 'B'
-            }, {
-                element: '#data',
-                'tooltip': 'The data section it is very important',
-                'position': 'T',
-                'text': '<h1>Data</h1><p>It is a attribute that contains every the texts and configurations that the plugin use</p>'
-            }, {
-                element: '#data dt[data-name="element"]',
-                'tooltip': 'Use a selector!',
-                'position': 'R',
-                'controlsPosition': 'BR'
-            }, {
-                element: '#data dt[data-name="position"]',
-                'tooltip': 'Like this, "R"',
-                'position': 'R'
-            }, {
-                element: '#data dt[data-name="text"]',
-                'tooltip': 'This can be HTML! (be standard, pls)',
-                'position': 'R'
-            }, {
-                element: '#data dt[data-name="tooltip"]',
-                'tooltip': 'Oops! I just forgot myself configuration!',
-                'position': 'R'
-            }, {
-                element: '#others',
-                'tooltip': 'Backgrounds and more!',
-                'text': '<p>Use rgba() because it looks really nice</p>'
-            }, {
-                element: '#soon',
-                'tooltip': 'Very soon...',
-                'text': '<p>I hope</p>'
-            }, {
-                element: '#dependencies',
-                'tooltip': 'Please use it'
-            }, {
-                element: '.github',
-                'tooltip': 'fork it',
-                'text': '<h1>That\'s all!</h1><p>Now you can download it or fork it on Github.</p>'
-            }],
-            controlsPosition: 'TR'
-        };
-
-        $('#startTour').click(function() {
-            $.aSimpleTour(options);
-        });
-    });
-    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>aSimpleTour - jQuery Plugin</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
 
 <body>
-    <header>
-        <h1 class="title">Alvaro's Simple Tour Plugin for jQuery</h1>
-        <ul id="menu" class="h-menu">
-            <li><a href="index.html">aSimpleTour</a></li>
-            <li><a href="https://github.com/alvaroveliz/aSimpleTour" class="github">Github</a></li>
-            <li><a href="https://github.com/alvaroveliz/aSimpleTour/downloads">Downloads</a></li>
-        </ul>
-    </header>
-    <h1 class="tac">
-      <a href="javascript:void(0);" class="btn" id="startTour">Start Tour</a>
-    </h1>
-    <section id="content">
-        <h2 class="tac">
-        <a href="http://github.com/alvaroveliz/aSimpleTour">aSimpleTourPlugin</a> is a jQuery plugin that will help you
-        to make website tours. 
-        <br />
-        If you want to know how it works press the button "start tour"
-      </h2>
-        <hr />
-    </section>
-    <section id="how">
-        <h3>How it works?</h3>
-        <p>
-            The plugin works using a very easy jSON Structure that gives it to the plugin all the elements, configurations, tooltips and help texts.
-            <br />
-            <code>i.e</code>
-            <pre>
-&lt;script&gt;
-options = {
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Alvaro's Simple Tour Plugin <small>for jQuery</small></h1>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">aSimpleTour</div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="https://github.com/alvaroveliz/aSimpleTour" id="github">Github</a>
+                    </li>
+                    </li>
+                    <li class="dropdown" id="demos">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="demos/demo-1/">Demo 1</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <p class="lead">This is a jQuery plugin that will help you to make website tours. If you want to know how it works press the button "start tour" .</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg tour" href="#" role="button">Start Tour</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default" id="how">
+                    <div class="panel-heading">
+                        <div class="panel-title">How it works?</div>
+                    </div>
+                    <div class="panel-body">
+                        <p>The plugin works using a very easy jSON Structure that gives it to the plugin all the elements, configurations, tooltips and help texts.</p>
+                        <div class="text-muted">.i.e.</div>
+                        <pre><code>&lt;script&gt;
+var tour = {
   data : [
     { element: '#id', 'tooltip' : 'This is a tooltip for some element #id' },
     { element: 'ul li:last a', 'tooltip' : 'The last link of some ul list' },
@@ -123,70 +80,195 @@ options = {
   controlsPosition : 'RT'
 }
 
-$.aSimpleTour(options);
-&lt;/script&gt;</pre>
-        </p>
-        <hr />
-    </section>
-    <section id="data">
-        <h3>The "data" section</h3>
-        <p>
-            The "data" attribute contains elements and configurations and you can set all the elements what you want with specials configurations for all the steps.
-            <br /> Every element that you add into the data attribute is a new step tour and you can configure every step using this attributes:
-            <dl>
-                <dt data-name="element">element</dt>
-                <dd><code>The element attribute is a DOM Element representation. By example you can use an ID (#id), a class (.class) or a jquery selector like "input[type=submit]"</code></dd>
-                <dt data-name="tooltip">tooltip</dt>
-                <dd><code>This is the tooltip text</code></dd>
-                <dt data-name="position">position</dt>
-                <dd><code>* The tooltip position it can be setted using "position". The options are : T, B, L, R, TL, TR, BL, BR, LT, RT, LB, RB. </code></dd>
-                <dt data-name="text">text</dt>
-                <dd><code>The main text that it shows into over the controls tour. You can use HTML too!</code></dd>
-            </dl>
-            <em><small> * T means top, B means bottom, L means left and R means right.</small></em>
-        </p>
-    </section>
-    <section id="others">
-        <h3>Other options</h3>
-        <p>
-            There are others options that can be used to change css styles like backgrounds, colors, fonts, and it's very effective because the plugin don't need a css file.
-            <dl>
-                <dt>welcomeMessage</dt>
-                <dd><code>The starting message tour</code></dd>
-            </dl>
-            <dl>
-                <dt>buttons</dt>
-                <dd>
-                    <code>
+$.aSimpleTour(tour);
+&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default" id="the-tour">
+                    <div class="panel-heading">
+                        <div class="panel-title">The "tour" section</div>
+                    </div>
+                    <div class="panel-body">
+                        <p> The "tour" attribute contains elements and configurations and you can set all the elements what you want with specials configurations for all the steps. Every element that you add into the tour attribute is a new step tour and you can configure every step using this attributes: </p>
+                        <dl>
+                            <dt data-name="element">element</dt>
+                            <dd><code>The element attribute is a DOM Element representation. By example you can use an ID (#id), a class (.class) or a jquery selector like "input[type=submit]"</code></dd>
+                            <dt data-name="tooltip">tooltip</dt>
+                            <dd><code>This is the tooltip text</code></dd>
+                            <dt data-name="position">position</dt>
+                            <dd><code>* The tooltip position it can be setted using "position". The options are : T, B, L, R, TL, TR, BL, BR, LT, RT, LB, RB. </code></dd>
+                            <dt data-name="text">text</dt>
+                            <dd><code>The main text that it shows into over the controls tour. You can use HTML too!</code></dd>
+                        </dl>
+                        <em><small> * T means top, B means bottom, L means left and R means right.</small></em>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default" id="other">
+                    <div class="panel-heading">
+                        <div class="panel-title">Other options</div>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            There are others options that can be used to change css styles like backgrounds, colors, fonts, and it's very effective because the plugin don't need a css file.
+                            <dl>
+                                <dt>welcomeMessage</dt>
+                                <dd><code>The starting message tour</code></dd>
+                            </dl>
+                            <dl>
+                                <dt>buttons</dt>
+                                <dd>
+                                    <code>
               With this attribute you can change the control buttons text using: 
               <br />
               buttons : { next : 'Next &amp;rarr;', prev : '&amp;larr; Prev', start : 'Start!', end: 'The end' }
             </code>
-                </dd>
-            </dl>
-            <dl>
-                <dt>tooltipColors & controlsColors</dt>
-                <dd><code>This attribute can be used to change colors and backgrounds like :<br /> { 'color' : 'white', 'backgroud' : 'rgba(0, 0, 0, 0.85)'}</code></dd>
-            </dl>
-            <dl>
-                <dt>controlsPosition</dt>
-                <dd><code>It is the starting position of the tour controls, it can be: TL, TR, BL, BR</code></dd>
-            </dl>
-        </p>
-    </section>
-    <section id="soon">
-        <h3>Work in progress</h3>
-        <p>There will be others options in the future like "autoStart, themes, animations and key controls"</p>
-    </section>
-    <section id="dependencies">
-        <h3>Dependencies</h3>
-        <p>This plugin depends on <a href="http://demos.flesler.com/jquery/scrollTo/">jQuery ScrollTo Plugin</a> because I don't want to rebuild the wheel.</p>
-    </section>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>tooltipColors & controlsColors</dt>
+                                <dd><code>This attribute can be used to change colors and backgrounds like :<br /> { 'color' : 'white', 'backgroud' : 'rgba(0, 0, 0, 0.85)'}</code></dd>
+                            </dl>
+                            <dl>
+                                <dt>controlsPosition</dt>
+                                <dd><code>It is the starting position of the tour controls, it can be: TL, TR, BL, BR</code></dd>
+                            </dl>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default" id="dependency">
+                    <div class="panel-heading">
+                        <div class="panel-title">Dependencies</div>
+                    </div>
+                    <div class="panel-body">
+                        <p>This plugin depends on <a href="http://demos.flesler.com/jquery/scrollTo/">jQuery ScrollTo Plugin</a> because I don't want to rebuild the wheel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
-        <p>
-            TOUR PLUGIN by Alvaro Véliz
-        </p>
+        <div class="container">
+            <div class="col-md-2">
+                <div class="text-center">
+                    <img src="assets/images/logo2.png" alt="" width="50%">
+                    <br> aSimpleTour Plugin
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-7">
+                <h4>See my others plugins</h4>
+                <ul>
+                    <li><a href="https://github.com/alvaroveliz/aCollapTable">aCollapTable</a></li>
+                    <li><a href="http://alvaroveliz.github.io/aAnyTabs/">aAnyTabs</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.aSimpleTour.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
+    <script>
+    var tour = {
+        autoStart: false,
+        data: [{
+            element: '.jumbotron .lead',
+            tooltip: 'Yes! It is very easy (simple) to use',
+            position: 'T'
+        }, {
+            element: '#how',
+            tooltip: 'Start reading this first',
+            position: 'TL',
+            text: '<h1>jSON structure</h1><code>Like : { some : var, lorem: ipsum } </code>'
+        }, {
+            element: '#how pre',
+            tooltip: 'This can be used inside the body or head',
+            position: 'T'
+        }, {
+            element: '#how pre',
+            tooltip: 'Or can be used into a click event',
+            position: 'B'
+        }, {
+            element: '#the-tour',
+            tooltip: 'The tour section it is very important',
+            position: 'T',
+            text: '<h1>Data</h1><p>It is a attribute that contains every the texts and configurations that the plugin use</p>'
+        }, {
+            element: '#the-tour dt[data-name="element"]',
+            tooltip: 'Use a selector!',
+            position: 'R',
+            'controlsPosition': 'BR'
+        }, {
+            element: '#the-tour dt[data-name="position"]',
+            tooltip: 'Like this, "R"',
+            position: 'R'
+        }, {
+            element: '#the-tour dt[data-name="text"]',
+            tooltip: 'This can be HTML! (be standard, pls)',
+            position: 'R'
+        }, {
+            element: '#the-tour dt[data-name="tooltip"]',
+            tooltip: 'Oops! I just forgot myself configuration!',
+            position: 'R'
+        }, {
+            element: '#other',
+            tooltip: 'Backgrounds and more!',
+            text: '<p>Use rgba() because it looks really nice</p>'
+        },{
+            element: '#dependency',
+            tooltip: 'Please use it'
+        },{
+            element: '#demos',
+            tooltip: 'Wanna see some demos?',
+            text: '<h2>Look out for our demos</h2>',
+            callback: function() {
+                $('[data-toggle=dropdown]').dropdown('toggle');
+            }
+        },{
+            element: '#github',
+            tooltip: 'fork it',
+            text: '<h1>That\'s all!</h1><p>Now you can download it or fork it on Github.</p>'
+        }],
+        controlsPosition: 'TR',
+        buttons: {
+            next: {
+                text: 'Next &rarr;',
+                class: 'btn btn-default'
+            },
+            prev: {
+                text: '&larr; Previous',
+                class: 'btn btn-default'
+            },
+            start: {
+                text: 'Start',
+                class: 'btn btn-primary'
+            },
+            end: {
+                text: 'End',
+                class: 'btn btn-primary'
+            }
+        },
+        controlsCss: {
+            background: 'rgba(55, 59, 65, 0.9)',
+            color: '#fff',
+            width: '400px',
+            'border-radius': 0
+        }
+    };
+
+    $(document).ready(function() {
+        $('.tour').on('click', function() {
+            $.aSimpleTour(tour);
+        });
+    });
+    </script>
 </body>
 
 </html>

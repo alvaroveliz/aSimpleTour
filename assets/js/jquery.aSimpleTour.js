@@ -7,8 +7,6 @@
  * 
  * Dependencies :
  * - jQuery scrollTo
- * 
- * This idea is based on appTour
  */
 
 (function($) {
@@ -37,6 +35,7 @@
     var options, step, steps;
     var ew, eh, el, et;
     var started = false;
+    var $overlay;
 
     var $tooltip = $('<div>', {
         id: 'tourtip',
@@ -50,7 +49,7 @@
         'border-radius': '5px',
         'font-size': '12px',
         'box-sizing': 'border-box',
-        'z-index' : '1000'
+        'z-index' : '2000'
     });
 
     var methods = {
@@ -63,14 +62,14 @@
                 options.data.unshift({ element : 'body', tooltip: null, text: options.welcomeMessage });
 
                 controls = '<div id="tourControls">\
-          <div id="tourText">'+options.welcomeMessage+'</div>\
-          <div id="tourButtons">\
-            <button id="tourPrev" style="display:none" class="'+options.buttons.prev.class+'">' + options.buttons.prev.text + '</button>\
-            <button id="tourNext" class="'+options.buttons.start.class+'">' + options.buttons.start.text + '</button>\
-            <button id="tourEnd" style="display:none" class="'+options.buttons.end.class+'">' + options.buttons.end.text + '</button>\
-          </div>\
-        </div>';
-                $controlsCss = { 'display': 'block', 'position': 'fixed', 'width': '200px', 'padding': '10px 20px', 'border-radius': '10px', 'font-family': 'sans-serif' };
+                  <div id="tourText">'+options.welcomeMessage+'</div>\
+                  <div id="tourButtons">\
+                    <button id="tourPrev" style="display:none" class="'+options.buttons.prev.class+'">' + options.buttons.prev.text + '</button>\
+                    <button id="tourNext" class="'+options.buttons.start.class+'">' + options.buttons.start.text + '</button>\
+                    <button id="tourEnd" style="display:none" class="'+options.buttons.end.class+'">' + options.buttons.end.text + '</button>\
+                  </div>\
+                </div>';
+                $controlsCss = { 'display': 'block', 'position': 'fixed', 'width': '200px', 'padding': '10px 20px', 'border-radius': '10px', 'font-family': 'sans-serif', 'z-index': '1000' };
                 $controls = $(controls).css($controlsCss).css(options.controlsCss);
                 $cpos = methods.getControlPosition(options.controlsPosition);
                 $controls.css($cpos);
@@ -86,7 +85,7 @@
             if (startFrom != null) {
                 step = startFrom;
                 stepData = options.data[startFrom];
-                methods.setTooltip(stepData);
+                methods.setTooltip(step, stepData);
             }
         },
         next: function() {
@@ -101,7 +100,7 @@
                 } else {
                     $tooltip.hide();
                     stepData = options.data[step];
-                    methods.setTooltip(stepData);
+                    methods.setTooltip(step, stepData);
                 }
             }
         },
@@ -114,11 +113,27 @@
                 step--;
                 stepData = options.data[step];
 
-                methods.setTooltip(stepData);
+                methods.setTooltip(step, stepData);
             }
         },
-        setTooltip: function(stepData) {
+        setTooltip: function(step, stepData) {
+            if (!$overlay) {
+                $overlay = $('<div id="#touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background-color: rgba(0,0,0,0.5);">');
+                $('body').append($overlay);    
+            }
+
+            $previousElement = $(options.data[step-1].element);
+            if (typeof $previousElement.data('tour-data') != 'undefined') {
+                previous_data = $previousElement.data('tour-data');
+                $previousElement.css('position', previous_data.position);
+                $previousElement.css('z-index', previous_data.zindex);    
+            }
+
             $element = $(stepData.element);
+            tour_data = { 'zindex' : $element.css('z-index'), 'position' : $element.css('position') };
+            $element.data('tour-data', tour_data);
+            $element.css('position', 'relative').css('z-index', 1000);
+
 
             if (typeof stepData.callback != 'undefined' && typeof stepData.callback == 'function') {
                 stepData.callback();
@@ -129,6 +144,7 @@
             }
 
             if (stepData.tooltip != null) {
+
                 $tooltip.html(stepData.tooltip);
                 if (stepData.text) {
                     $('#tourText').html(stepData.text);
@@ -283,10 +299,6 @@
                 $('#tourEnd').show();
                 $('#tourNext').show().html(options.buttons.next.text).attr('class', options.buttons.next.class);
             }
-
-            if (step == steps-1) {
-                $('#tourNext').hide();   
-            }
         },
         destroy: function() {
             $('#tourControls').remove();
@@ -294,6 +306,7 @@
             $tooltip.css({ 'display': 'none' }).html('');
             step = -1;
             started = false;
+            $overlay.remove();
         }
     };
 
@@ -306,7 +319,7 @@
     });
 
     $('body').on('click', '#tourEnd', function() {
-        methods.next();
+        methods.destroy();
     });
 
     $.fn.aSimpleTour = function(method) {
