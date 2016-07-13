@@ -1,8 +1,26 @@
 {
-    "name": "aSimpleTour",
-    "version": "1.0.2",
-    "main": "./jquery.aSimpleTour.js",
-    "dependencies" : {
-        "jquery" : "1.8.*"
-    }
+  "name": "asimpletour",
+  "version": "1.0.2",
+  "main": "./jquery.aSimpleTour.js",
+  "dependencies": {
+    "jquery": "1.8.*"
+  },
+  "homepage": "http://alvaroveliz.github.io/aSimpleTour/",
+  "authors": [
+    "Alvaro Veliz <alvaro.veliz@gmail.com>"
+  ],
+  "description": "jQuery aSimpleTour",
+  "keywords": [
+    "tour",
+    "wizard",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
