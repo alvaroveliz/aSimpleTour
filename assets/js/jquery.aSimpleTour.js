@@ -1,7 +1,7 @@
 /**
  * jQuery aSimpleTour
  *
- * @version 1.0.3
+ * @version 1.0.4
  * @description jQuery Tour web
  * @author alvaro.veliz@gmail.com
  */
@@ -12,6 +12,7 @@
         data: [],
         autoStart: false,
         controlsPosition: 'TR',
+        useOverlay: true,
         welcomeMessage: '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
         buttons: {
             next  : { text : 'Next', class : ''},
@@ -114,11 +115,13 @@
             }
         },
         setTooltip: function(step, stepData) {
-            if (!$overlay) {
-                $overlay = $('<div id="#touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background-color: rgba(0,0,0,0.5);">');
+            if (options.useOverlay) {
+                if (!$overlay) {
+                    $overlay = $('<div id="#touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background-color: rgba(0,0,0,0.5);">');
+                }
+                $('body').append($overlay);
             }
-            $('body').append($overlay);
-
+            
             $previousElement = $(options.data[step-1].element);
             if (typeof $previousElement.data('tour-data') != 'undefined') {
                 previous_data = $previousElement.data('tour-data');
@@ -129,9 +132,11 @@
             $element = $(stepData.element).eq(0);
             tour_data = { 'zindex' : $element.css('z-index'), 'position' : $element.css('position'), 'background-color' : $element.css('background-color') };
             $element.data('tour-data', tour_data);
-            bgc = ($element.css('background-color') == 'transparent') ? methods.findParentBg($element) : $element.css('background-color');
-            $element.css('position', 'relative').css('z-index', 1000).css('background-color', bgc);
-
+            $element.css('position', 'relative').css('z-index', 1000)
+            if (options.useOverlay) {
+                bgc = ($element.css('background-color') == 'transparent') ? methods.findParentBg($element) : $element.css('background-color');    
+                $element.css('background-color', bgc);
+            }
 
             if (typeof stepData.callback != 'undefined' && typeof stepData.callback == 'function') {
                 stepData.callback();
@@ -310,7 +315,9 @@
             $tooltip.css({ 'display': 'none' }).html('');
             step = -1;
             started = false;
-            $overlay.remove();
+            if (options.useOverlay) {
+                $overlay.remove();    
+            }
         }
     };
 
@@ -324,6 +331,18 @@
 
     $('body').on('click', '#tourEnd', function() {
         methods.destroy();
+    });
+
+    $('body').on('keydown', function(e){
+        if (e.keyCode == 37) {
+            methods.prev();
+        } 
+        if (e.keyCode == 39) {
+            methods.next();
+        }
+        if (e.keyCode == 27) {
+            methods.destroy();
+        }
     });
 
     $.fn.aSimpleTour = function(method) {
