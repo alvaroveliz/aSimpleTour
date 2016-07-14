@@ -1,7 +1,7 @@
 /**
  * jQuery aSimpleTour
  *
- * @version 1.0.4
+ * @version 1.0.5
  * @description jQuery Tour web
  * @author alvaro.veliz@gmail.com
  */
@@ -13,6 +13,7 @@
         autoStart: false,
         controlsPosition: 'TR',
         useOverlay: true,
+        overlayZindex: 10,
         welcomeMessage: '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
         buttons: {
             next  : { text : 'Next', class : ''},
@@ -85,6 +86,8 @@
                 stepData = options.data[startFrom];
                 methods.setTooltip(step, stepData);
             }
+
+            methods.bindElements();
         },
         next: function() {
             // previous step location
@@ -117,7 +120,7 @@
         setTooltip: function(step, stepData) {
             if (options.useOverlay) {
                 if (!$overlay) {
-                    $overlay = $('<div id="#touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background-color: rgba(0,0,0,0.5);">');
+                    $overlay = $('<div id="touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: '+options.overlayZindex+'; background-color: rgba(0,0,0,0.5);">');
                 }
                 $('body').append($overlay);
             }
@@ -318,32 +321,33 @@
             if (options.useOverlay) {
                 $overlay.remove();    
             }
+        },
+        bindElements: function() {
+            $('body').on('click', '#tourNext', function() {
+                methods.next();
+            });
+
+            $('body').on('click', '#tourPrev', function() {
+                methods.prev();
+            });
+
+            $('body').on('click', '#tourEnd', function() {
+                methods.destroy();
+            });
+
+            $('body').on('keydown', function(e){
+                if (e.keyCode == 37) {
+                    methods.prev();
+                } 
+                if (e.keyCode == 39) {
+                    methods.next();
+                }
+                if (e.keyCode == 27) {
+                    methods.destroy();
+                }
+            });
         }
     };
-
-    $('body').on('click', '#tourNext', function() {
-        methods.next();
-    });
-
-    $('body').on('click', '#tourPrev', function() {
-        methods.prev();
-    });
-
-    $('body').on('click', '#tourEnd', function() {
-        methods.destroy();
-    });
-
-    $('body').on('keydown', function(e){
-        if (e.keyCode == 37) {
-            methods.prev();
-        } 
-        if (e.keyCode == 39) {
-            methods.next();
-        }
-        if (e.keyCode == 27) {
-            methods.destroy();
-        }
-    });
 
     $.fn.aSimpleTour = function(method) {
         t = this;
