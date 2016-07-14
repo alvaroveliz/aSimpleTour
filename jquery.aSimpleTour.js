@@ -1,12 +1,9 @@
 /**
  * jQuery aSimpleTour
  *
- * @version 1.0.2
- * @description Tour web
+ * @version 1.0.3
+ * @description jQuery Tour web
  * @author alvaro.veliz@gmail.com
- * 
- * Dependencies :
- * - jQuery scrollTo
  */
 
 (function($) {
@@ -119,8 +116,8 @@
         setTooltip: function(step, stepData) {
             if (!$overlay) {
                 $overlay = $('<div id="#touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background-color: rgba(0,0,0,0.5);">');
-                $('body').append($overlay);    
             }
+            $('body').append($overlay);
 
             $previousElement = $(options.data[step-1].element);
             if (typeof $previousElement.data('tour-data') != 'undefined') {
@@ -129,10 +126,11 @@
                 $previousElement.css('z-index', previous_data.zindex);    
             }
 
-            $element = $(stepData.element);
-            tour_data = { 'zindex' : $element.css('z-index'), 'position' : $element.css('position') };
+            $element = $(stepData.element).eq(0);
+            tour_data = { 'zindex' : $element.css('z-index'), 'position' : $element.css('position'), 'background-color' : $element.css('background-color') };
             $element.data('tour-data', tour_data);
-            $element.css('position', 'relative').css('z-index', 1000);
+            bgc = ($element.css('background-color') == 'transparent') ? methods.findParentBg($element) : $element.css('background-color');
+            $element.css('position', 'relative').css('z-index', 1000).css('background-color', bgc);
 
 
             if (typeof stepData.callback != 'undefined' && typeof stepData.callback == 'function') {
@@ -299,6 +297,12 @@
                 $('#tourEnd').show();
                 $('#tourNext').show().html(options.buttons.next.text).attr('class', options.buttons.next.class);
             }
+        },
+        findParentBg : function($element) {
+            while ($element.css('background-color') == 'transparent') {
+                $element = $element.parent();
+            }
+            return $element.css('background-color');
         },
         destroy: function() {
             $('#tourControls').remove();

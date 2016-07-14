@@ -1,6 +1,6 @@
 {
   "name": "asimpletour",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./jquery.aSimpleTour.js",
   "dependencies": {
     "jquery": "1.8.*",
