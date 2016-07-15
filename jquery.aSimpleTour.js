@@ -1,7 +1,7 @@
 /**
  * jQuery aSimpleTour
  *
- * @version 1.0.5
+ * @version 1.0.6
  * @description jQuery Tour web
  * @author alvaro.veliz@gmail.com
  */
@@ -151,10 +151,22 @@
 
             if (stepData.tooltip != null) {
 
-                $tooltip.html(stepData.tooltip);
+                tooltipContent = stepData.tooltip;
+
+                if (typeof stepData.files != 'undefined' && stepData.files.length > 0) {
+                    tooltipContent += '<hr>';
+                    $.each(stepData.files, function(f, file){
+                        tooltipContent += '<a href="'+file.url+'" target="_blank">'+file.name+'</a><br>';
+                    });
+                }
+
+                $tooltip.html(tooltipContent);
+
                 if (stepData.text) {
                     $('#tourText').html(stepData.text);
                 }
+
+                
                 tooltipPos = (typeof stepData.position == 'undefined') ? 'BL' : stepData.position;
                 $pos = methods.getTooltipPosition(tooltipPos, $element);
 

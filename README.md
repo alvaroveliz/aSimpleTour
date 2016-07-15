@@ -1,4 +1,4 @@
-# aSimpleTour 1.0.5
+# aSimpleTour 1.0.6
 
 It's a simple jQuery plugin for websites tours.
 
