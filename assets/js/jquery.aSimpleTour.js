@@ -101,7 +101,7 @@
                 } else {
                     $tooltip.hide();
                     stepData = options.data[step];
-                    methods.setTooltip(step, stepData);
+                    methods.setTooltip(step, stepData, 'next');
                 }
             }
         },
@@ -114,10 +114,10 @@
                 step--;
                 stepData = options.data[step];
 
-                methods.setTooltip(step, stepData);
+                methods.setTooltip(step, stepData, 'prev');
             }
         },
-        setTooltip: function(step, stepData) {
+        setTooltip: function(step, stepData, dir) {
             if (options.useOverlay) {
                 if (!$overlay) {
                     $overlay = $('<div id="touroverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: '+options.overlayZindex+'; background-color: rgba(0,0,0,0.5);">');
@@ -125,7 +125,7 @@
                 $('body').append($overlay);
             }
             
-            $previousElement = $(options.data[step-1].element);
+            $previousElement = (dir == 'next') ? $(options.data[step-1].element) : $(options.data[step+1].element);
             if (typeof $previousElement.data('tour-data') != 'undefined') {
                 previous_data = $previousElement.data('tour-data');
                 $previousElement.css('position', previous_data.position);
