@@ -1,7 +1,7 @@
 /**
  * jQuery aSimpleTour
  *
- * @version 1.0.6
+ * @version 1.0.7
  * @description jQuery Tour web
  * @author alvaro.veliz@gmail.com
  */
