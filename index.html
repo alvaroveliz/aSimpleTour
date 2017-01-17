@@ -131,15 +131,24 @@ $.aSimpleTour(tour);
                                 <dt>buttons</dt>
                                 <dd>
                                     <code>
-              With this attribute you can change the control buttons text using: 
-              <br />
-              buttons : { next : 'Next &amp;rarr;', prev : '&amp;larr; Prev', start : 'Start!', end: 'The end' }
+              With this attribute you can change the control buttons text and class:
             </code>
+            <pre><code>{ 
+    next  : { text : 'Next &rarr;', class : ''},
+    prev  : { text : '&larr; Previous', class: '' },
+    start : { text : 'Start', class: '' },
+    end   : { text : 'End', class: '' }
+}</code></pre>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>tooltipColors & controlsColors</dt>
-                                <dd><code>This attribute can be used to change colors and backgrounds like :<br /> { 'color' : 'white', 'backgroud' : 'rgba(0, 0, 0, 0.85)'}</code></dd>
+                                <dd><code>This attribute can be used to change colors and backgrounds like :</code> 
+<pre><code>{ 
+    'color' : 'white', 
+    'backgroud' : 'rgba(0, 0, 0, 0.85)'
+}</code></pre>
+</dd>
                             </dl>
                             <dl>
                                 <dt>controlsPosition</dt>
