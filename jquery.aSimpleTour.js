@@ -14,6 +14,7 @@
         controlsPosition: 'TR',
         useOverlay: true,
         overlayZindex: 10,
+        keyboard: true, /* Option for keyboard */
         welcomeMessage: '<h2>Tour</h2><p>Welcome to the Tour Plugin</p>',
         buttons: {
             next  : { text : 'Next', class : ''},
@@ -330,6 +331,7 @@
             $tooltip.css({ 'display': 'none' }).html('');
             step = -1;
             started = false;
+            options.keyboard = false; /* Bug fixed with option keyboard */
             if (options.useOverlay) {
                 $overlay.remove();    
             }
@@ -349,13 +351,13 @@
 
             $('body').on('keydown', function(e){
                 if (e.keyCode == 37) {
-                    methods.prev();
+                    options.keyboard ? methods.prev() : ''; /* Method option keyboard */
                 } 
                 if (e.keyCode == 39) {
-                    methods.next();
+                    options.keyboard ? methods.next() : '';
                 }
                 if (e.keyCode == 27) {
-                    methods.destroy();
+                    options.keyboard ? methods.destroy() : '';
                 }
             });
         }
