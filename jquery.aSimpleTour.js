@@ -330,6 +330,11 @@
             return $element.css('background-color');
         },
         destroy: function() {
+            $('body').off('click', '#tourNext');
+            $('body').off('click', '#tourPrev');
+            $('body').off('click', '#tourEnd');
+            $('body').off('keydown');
+
             $('#tourControls').remove();
             $('#tourtip').remove();
             $tooltip.css({ 'display': 'none' }).html('');
