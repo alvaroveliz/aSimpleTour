@@ -54,6 +54,10 @@
 
     var methods = {
         init: function(opts, startFrom) {
+            if (started) {
+                methods.destroy();
+            }
+
             options = $.extend(settings, opts);
             startFrom = (typeof(startFrom) == 'undefined') ? null : startFrom-1;
 
