@@ -54,6 +54,10 @@
 
     var methods = {
         init: function(opts, startFrom) {
+            if (started) {
+                methods.destroy();
+            }
+
             options = $.extend(settings, opts);
             startFrom = (typeof(startFrom) == 'undefined') ? null : startFrom-1;
 
@@ -326,6 +330,11 @@
             return $element.css('background-color');
         },
         destroy: function() {
+            $('body').off('click', '#tourNext');
+            $('body').off('click', '#tourPrev');
+            $('body').off('click', '#tourEnd');
+            $('body').off('keydown');
+
             $('#tourControls').remove();
             $('#tourtip').remove();
             $tooltip.css({ 'display': 'none' }).html('');
