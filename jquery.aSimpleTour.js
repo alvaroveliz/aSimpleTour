@@ -314,7 +314,7 @@
             if (step <= 0) {
                 $('#tourPrev').hide();
                 $('#tourEnd').hide();
-                $('#tourNext').html(options.buttons.start.text).attr('class', options.buttons.start.class);;
+                $('#tourNext').html(options.buttons.start.text).attr('class', options.buttons.start.class);
             }
 
             if (step <= steps && step > 0) {
