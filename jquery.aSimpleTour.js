@@ -335,6 +335,7 @@
             $('body').off('click', '#tourEnd');
             $('body').off('keydown');
 
+            $element.css("z-index", "auto");
             $('#tourControls').remove();
             $('#tourtip').remove();
             $tooltip.css({ 'display': 'none' }).html('');
