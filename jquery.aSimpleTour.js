@@ -314,7 +314,7 @@
             if (step <= 0) {
                 $('#tourPrev').hide();
                 $('#tourEnd').hide();
-                $('#tourNext').html(options.buttons.start.text).attr('class', options.buttons.start.class);;
+                $('#tourNext').html(options.buttons.start.text).attr('class', options.buttons.start.class);
             }
 
             if (step <= steps && step > 0) {
@@ -335,6 +335,7 @@
             $('body').off('click', '#tourEnd');
             $('body').off('keydown');
 
+            $element.css("z-index", "auto");
             $('#tourControls').remove();
             $('#tourtip').remove();
             $tooltip.css({ 'display': 'none' }).html('');
@@ -379,18 +380,19 @@
         } else if (typeof method === 'object' || !method) {
             return methods.init.apply(this, arguments);    
         } else {
-            $.error('Method ' + method + ' does not exist on jQuery.aSimpleTour');
+            $.on("error", function()
+            {
+                console.error('Method ' + method + ' does not exist on jQuery.aSimpleTour');
+            })
         }
     };
 
-    $(window).load(function(){
+    $(window).on('load', function(){
         tourStep = window.location.hash.substr(1).split('=');
         if (typeof(eval(tourStep[0])) != 'undefined' && typeof(eval(tourStep[1])) != 'undefined') {
             $.aSimpleTour(eval(tourStep[0]), tourStep[1]);    
         }
     });
-
-
 })(jQuery);
 
 
