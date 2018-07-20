@@ -393,8 +393,6 @@
             $.aSimpleTour(eval(tourStep[0]), tourStep[1]);    
         }
     });
-
-
 })(jQuery);
 
 
